@@ -20,3 +20,6 @@ Route::post('/clients', [ClientAppController::class, 'manageClients']);
 // Routes for managing apps specifically for a client
 Route::get('/clients/{clientId}/apps', [ClientAppController::class, 'manageApps']);
 Route::post('/clients/{clientId}/apps', [ClientAppController::class, 'manageApps']);
+
+// Routes for data export
+Route::get('/clients/export', [ClientAppController::class, 'exportClients'])->name('clients.export');

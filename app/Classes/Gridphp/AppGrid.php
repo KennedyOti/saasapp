@@ -21,6 +21,7 @@ class AppGrid
             "add" => true,
             "edit" => true,
             "delete" => true,
+            "multiselect" => true, // Enable multi-row selection
         ];
         $grid->set_options($options);
 
@@ -58,21 +59,6 @@ class AppGrid
 
         // Set the select command to filter apps by client ID
         $grid->select_command = "SELECT * FROM apps WHERE client_id = $clientId";
-
-        // Add event handler for inserting a new record
-        $grid->actions["add"] = [
-            "onclick" => function ($data) use ($clientId) {
-                $data["params"]["client_id"] = $clientId; // Explicitly set the client_id before insertion
-                return true; // Proceed with the insertion
-            }
-        ];
-
-        // Set the grid actions
-        $grid->set_actions([
-            "add" => true,
-            "edit" => true,
-            "delete" => true,
-        ]);
 
         // Render and return the grid
         return $grid->render("app_grid");

@@ -21,6 +21,18 @@ class ClientGrid
             "add" => true,
             "edit" => true,
             "delete" => true,
+            "multiselect" => true,
+            // Enable export options
+            "export" => [
+                "enabled" => true,  // Enable export
+                "formats" => ["pdf", "excel", "csv", "html"],  // Supported formats
+                "filename" => "clients_export",  // Default filename
+                "heading" => "Client Data Export",  // Default heading
+                "orientation" => "portrait",  // Default orientation
+                "paper" => "A4",  // Default paper size
+                "paged" => "all",  // Default to export all pages
+                "range" => "all",  // Default to export all data
+            ],
         ];
         $grid->set_options($options);
 
@@ -50,14 +62,14 @@ class ClientGrid
                 "title" => "Created At",
                 "name" => "created_at",
                 "width" => "150",
-                "editable" => false, // Typically not edited directly by users
+                "editable" => false,
                 "formatter" => "datetime"
             ],
             [
                 "title" => "Updated At",
                 "name" => "updated_at",
                 "width" => "150",
-                "editable" => false, // Typically not edited directly by users
+                "editable" => false,
                 "formatter" => "datetime"
             ],
         ];
