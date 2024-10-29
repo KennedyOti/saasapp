@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Manage Grid</title>
+    <title>Clients Management</title>
 
     <!-- Default Theme CSS -->
     <link id="theme-css" rel="stylesheet" href="{{ asset('assets/gridphp/themes/redmond/jquery-ui.custom.css') }}">
